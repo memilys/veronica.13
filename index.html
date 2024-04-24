@@ -8,38 +8,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="conteudo-principal">
-        <h2 class="titulo-principal">Meus Objetivos do ano_</h2>
-<div class="botoes">
-        <button class="botao">Cursos na Alura</button>
-        <button class="botao">Criar projetos em Javascript</button>
-        <button class="botao">Criar um portfolio</button>
-        <button class="botao">Atualizar meu currículo</button>
- </div>
-</section>
-    <div class="aba-conteudo ativo">
-        <h3 class="aba-conteudo-titulo-principal">Estudar 4 cursos na Alura</h3>
-        <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-        <div class="contador"></div>
-    </div>
-    <div class="aba-conteudo">
-        <h3 class="aba-conteudo-titulo-principal">Criar 5 projetos em Javascript</h3>
-        <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-        <div class="contador"></div>
-    </div>
-    <div class="aba-conteudo">
-        <h3 class="aba-conteudo-titulo-principal">Criar um portfolio com os meus 3 melhores projetos</h3>
-        <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-        <div class="contador"></div>
-    </div>
-    <div class="aba-conteudo">
-        <h3 class="aba-conteudo-titulo-principal">Atualizar meu currículo com os certificados da Alura</h3>
-        <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-        <div class="contador"></div>
-    </div>
- 
-</section>
-<script src="main.js"></script>
-   
+    
+    <main>
+        <section id="content" style="display: none;">
+            <h2>Descrição</h2>
+            <p>Como acontece</p>
+        </section>
+
+        <section id="passwordForm">
+            <h2>Colocar senha</h2>
+            <form onsubmit="checkPassword(); return false;">
+                <input type="password" id="passwordInput" required>
+                <button type="submit">Acessar</button>
+            </form>
+
+        </section>
+
+        <section class="conteudo-principal">
+            <h2 class="titulo-principal">Meus Objetivos do ano</h2>
+            <div class="botoes">
+                <button class="botao">Cursos na Alura</button>
+                <button class="botao">Criar projetos em Javascript</button>
+                <button class="botao">Criar um portfolio</button>
+                <button class="botao">Atualizar meu currículo</button>
+            </div>
+        </section>
+
+        <div class="aba-conteudo ativo">
+            <h3 class="aba-conteudo-titulo-principal">Estudar 4 cursos na Alura</h3>
+            <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+            <div class="contador"></div>
+        </div>
+    </main>
+       
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("passwordInput").Value;
+            if (password === "123"){
+                document.getElementById("content").style.display = "block";
+                document.getElementById("passwordForm").style.display = "none";
+            }else{
+                alert("Senha incorreta. Tente novamente.");
+                document.getElementById("passwordInput").value = ""; 
+            }
+        }
+    </script>
+    
 </body>
 </html>
